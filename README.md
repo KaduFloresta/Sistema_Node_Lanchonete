@@ -22,10 +22,10 @@
 <hr>
 
 ## NodeJS - Sistema Conectado com o BD (SenacFlix)
-- HTML.
-- CSS.
+- HTML. (em desenvolvimento)
+- CSS. (em desenvolvimento)
 - Javascript.
 - Node.
 - MVC.
-- API
+- API.
 ---
