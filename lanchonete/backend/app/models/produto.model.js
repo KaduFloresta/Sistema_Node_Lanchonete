@@ -8,7 +8,16 @@ const ProdutoModel = function (produto) {
 
 // Cria um novo produto no BD
 ProdutoModel.create = (produto, result) => {
-    // Implemente criação de um novo produto no BD
+    // Implementar criação de um novo produto no BD
+    sql.query("INSERT INTO produtos SET ? ", produto, (err, res) => {
+        if (err) {
+            console.log("Erro!", err);
+            result(err, null);
+            return;
+        }
+        console.log("produtos criado: ", { idprodutos: res.insertid, ...produto });
+        result(null, { idprodutos: res.insertid, ...produto });
+    });
 };
 
 // Seleciona um produto através do ID
@@ -47,17 +56,48 @@ ProdutoModel.getAll = (result) => {
 
 // Atualizar o produto através do ID
 ProdutoModel.updateById = (produtoId, produto, result) => {
-
+    sql.query("UPDATE produtos SET nome = ?, valor = ? WHERE idprodutos = ?", [produto.nome, produto.valor, produtoId], (err, res) => {
+        if (err) {
+            console.log("Erro", err);
+            result(null, err);
+        }
+        else if (res.affectedRows == 0) {
+            result({ kind: "not_found" }, null);
+        }
+        else {
+            console.log("Produto atualizado: ", { idprodutos: produtoId, ...produto });
+            result(null, { idprodutos: produtoId, ...produto });
+        }
+    });
 };
 
 // Remover o produto através do ID
 ProdutoModel.remove = (produtoId, result) => {
-
+    sql.query("DELETE FROM produtos WHERE idprodutos = ?", produtoId, (err, re) => {
+        if (err) {
+            console.log("Erro", err);
+            result(null, err);
+        }
+        else if (res.affectedRows == 0) {
+            result({ kind: "not_found" }, null);
+        }
+        else {
+            result(null, res);
+        }
+    });
 };
 
 // Remover todos os produtos
 ProdutoModel.removeAll = (result) => {
-
+    sql.query("DELETE FROM produtos", (err, re) => {
+        if (err) {
+            console.log("Erro", err);
+            result(err);
+        }
+        else {
+            result(null);
+        }
+    });
 };
 
 module.exports = ProdutoModel;

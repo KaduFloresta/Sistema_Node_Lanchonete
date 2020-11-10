@@ -13,7 +13,7 @@ const connection = mysql.createConnection({
 connection.connect(error => {
     if (error)
         throw error;
-    console.log("Conectado com o BD");
+    console.log("Conectado com o Banco de Dados");
 });
 
 module.exports = connection;
