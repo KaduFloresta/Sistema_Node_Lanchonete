@@ -108,7 +108,6 @@ ProdutoPedido.findById = (produtoId, result) => {
 };
 
 
-
 // // Atualizar o produto através do ID
 // ProdutoModel.updateById = (produtoId, produto, result) => {
 //     sql.query("UPDATE produtos SET nome = ?, valor = ? WHERE idprodutos = ?", [produto.nome, produto.valor, produtoId], (err, res) => {
