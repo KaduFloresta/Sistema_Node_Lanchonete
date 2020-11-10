@@ -1,4 +1,5 @@
 <!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -12,7 +13,7 @@
     <link rel="sortcut icon" href="img/favicon.ico" type="image/x-icon" id="favicon" />
     <!-- <script src="js/Index.js"></script> -->
 
-    <title>Dona Maria - HomePage</title>
+    <title>Dona Maria - Cadastro</title>
 </head>
 
 <body>
@@ -28,13 +29,13 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a class="navbar-brand" href="#">Lanchonete da Dona Maria</a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.html">Home <span class="sr-only">(atual)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="cadastro.html">Cadastro</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item"></li>
                     <a class="nav-link" href="consulta.html">Consulta</a>
                 </li>
             </ul>
@@ -42,20 +43,25 @@
     </nav>
 
     <div class="container">
-        <div class="bloco1">
-                <img src="img/hamburguer.png" alt="" width="180px">
-                <img src="img/maria.png" alt="" width="180px">
-                <img src="img/hotdog.png" alt="" width="180px">
-        </div>
-        <div>
-            <button type="button" class="btn btn-warning btn-lg btn-block">⭐️ Cadastro ⭐️</button>
-            <button type="button" class="btn btn-danger btn-lg btn-block">⭐️ Consulta ⭐️</button>
-        </div>
-        <div class="bloco2">
-            <img src="img/fritas.png" alt="" width="180px">
-            <img src="img/cafe.png" alt="" width="120px">
-            <img src="img/pizza.png" alt="" width="260px">
-    </div>
+        <hr>
+        <h1 class="mx-auto" style="width:max-content">Cadastro de Produtos</h1>
+        <hr>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-3">
+                    <label for="fnome">Nome:</label>
+                    <input type="text" class="form-control" id="fnome">
+                </div>
+                <div class="form-group col-3">
+                    <label for="lnome">Preço:</label>
+                    <input type="text" class="form-control" id="lnome">
+                </div>
+                <div>
+                    <button type="button" class="btn btn-success btn-lg btn-block">⭐️ Cadastrar ⭐️</button>
+                    <button type="button" class="btn btn-primary btn-lg btn-block">⭐️ Voltar ⭐️</button>
+                </div>
+            </div>
+        </form>
     </div>
 
 
