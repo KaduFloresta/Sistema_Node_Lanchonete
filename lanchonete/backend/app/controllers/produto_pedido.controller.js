@@ -98,61 +98,65 @@ exports.findByProduto = (req, res) => {
     });
 };
 
-        // exports.update = (req, res) => {
-        //     if (!req.body.nome && !req.body.valor) {
-        //         res.status(400).send({
-        //             message: "Conteúdo do corpo da requisição está vazio."
-        //         });
-        //     }
-        //     else {
-        //         const produto = new produtoModel({
-        //             nome: req.body.nome,
-        //             valor: req.body.valor
-        //         });
+// Altera o dados do produto_pedido
+exports.update = (req, res) => {
+    if (!req.body.produtos_idprodutos && !req.body.pedidos_idpedidos) {
+        res.status(400).send({
+            message: "Conteúdo do corpo da requisição está vazio."
+        });
+    }
+    else {
+        const produtoPedido = new produto_pedidoModel({
+            produtos_idprodutos: req.body.produtos_idprodutos,
+            pedidos_idpedidos: req.body.pedidos_idpedidos,
+            observacao: req.body.observacao
+        });
 
-        //         produtoModel.updateById(req.params.produtoId, produto, (err, data) => {
-        //             if (err) {
-        //                 if (err.kind == "not_found") {
-        //                     res.status(404).send({
-        //                         message: "Produto não encontrado!"
-        //                     });
-        //                 }
-        //                 else {
-        //                     res.status(500).send({
-        //                         message: "Erro ao atualizar o produto!"
-        //                     });
-        //                 }
-        //             }
-        //             else {
-        //                 res.send(data);
-        //             }
-        //         });
-        //     }
-        // };
+        produto_pedidoModel.updateById(req.params.produtoPedidoId, produtoPedido, (err, data) => {
+            if (err) {
+                if (err.kind == "not_found") {
+                    res.status(404).send({
+                        message: "Pedido não encontrado!"
+                    });
+                }
+                else {
+                    res.status(500).send({
+                        message: "Erro ao atualizar o pedido!"
+                    });
+                }
+            }
+            else {
+                res.send(data);
+            }
+        });
+    }
+};
 
-        // exports.delete = (req, res) => {
-        //     ProdutoModel.remove.apply(req.params.produtoId, (res, data) => {
-        //         if (err) {
-        //             if (err.kind == "not_found") {
-        //                 res.status(404).send({ message: "Produto não encontrado!" });
-        //             }
-        //             else {
-        //                 res.status(500).send({ message: "Erro ao deletar o produto" });
-        //             }
-        //         }
-        //         else {
-        //             res.send({ message: "Produto deletado com sucesso!" });
-        //         }
-        //     });
-        // };
+// Deleta um pedido 
+exports.delete = (req, res) => {
+    produto_pedidoModel.remove.apply(req.params.produtoPedidoId, (res, data) => {
+        if (err) {
+            if (err.kind == "not_found") {
+                res.status(404).send({ message: "Pedido não encontrado!" });
+            }
+            else {
+                res.status(500).send({ message: "Erro ao deletar o pedido" });
+            }
+        }
+        else {
+            res.send({ message: "Pedido deletado com sucesso!" });
+        }
+    });
+};
 
-        // exports.deleteAll = (req, res) => {
-        //     ProdutoModel.remove((err) => {
-        //         if (err) {
-        //             res.status(500).send({ message: "Erro ao deletar todos os produtos" });
-        //         }
-        //         else {
-        //             res.send({ message: "Todos os produtos deletados com sucesso!" });
-        //         }
-        //     });
-    // };
+// Deleta todos os pedidos
+exports.deleteAll = (req, res) => {
+    produto_pedidoModel.remove((err) => {
+        if (err) {
+            res.status(500).send({ message: "Erro ao deletar todos os pedidos" });
+        }
+        else {
+            res.send({ message: "Todos os pedidos deletados com sucesso!" });
+        }
+    });
+};

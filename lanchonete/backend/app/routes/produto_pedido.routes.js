@@ -14,10 +14,10 @@ module.exports = app => {
 
     // Localhost:3000/produtos/pedido/4 = seleciona todos os produtos ID=4 dentro dos pedidos 
     app.get("/produtos_pedidos/:produtoPedidoId", produto_pedidoController.findOne);
-    // // Localhost:3000/produtos/pedido/10 = seleciona o produtos_pedidos do produto com ID=10
-    // app.get("/produtos_pedidos/pedido/:pedidoId", produto_pedidoController.findByPedido);
-    // // Localhost:3000/produtos/pedido/2 = seleciona o produtos_pedidos do produto com ID=2
-    // app.get("/produtos_pedidos/pedido/:produtoseleciona o produtos_pedidos do produto com ID=10Id", produto_pedidoController.findByProduto);
+    // Localhost:3000/produtos/pedido/10 = seleciona o produtos_pedidos do produto com ID=10
+    app.get("/produtos_pedidos/pedido/:pedidoId", produto_pedidoController.findByPedido);
+    // Localhost:3000/produtos/pedido/2 = seleciona o produtos_pedidos do produto com ID=2
+    app.get("/produtos_pedidos/pedido/:produtoseleciona o produtos_pedidos do produto com ID=10Id", produto_pedidoController.findByProduto);
 
     // app.put("/produtos_pedidos/:produtoPedidoId", produto_pedidoController.update);
 

@@ -2,8 +2,7 @@ const sql = require("./db.js");
 
 // Construtor
 const PedidoModel = function (pedido) {
-    this.nome = pedido.nome;
-    this.valor = pedido.valor;
+    this.pedidos_idpedidos = pedido.pedidos_idpedidos;
 }
 
 // Cria um novo pedido no BD

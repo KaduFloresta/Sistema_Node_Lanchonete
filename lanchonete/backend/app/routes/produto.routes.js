@@ -1,6 +1,12 @@
 module.exports = app => {
     const produtoController = require("../controllers/produto.controller.js");
 
+    // Padrões do HTTP
+    // POST = Enviando dados para a API
+    // GET = Resgatando dados da API
+    // PUT = Enviar dados de atualização 
+    // DELETE = Deletar dados 
+
     app.post("/produtos", produtoController.create);
 
     app.get("/produtos", produtoController.findAll);
