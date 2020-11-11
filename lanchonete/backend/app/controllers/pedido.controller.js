@@ -1,15 +1,14 @@
 const PedidoModel = require("../models/pedido.model.js");
 
 exports.create = (req, res) => {
-    if (!req.body.nome && !req.body.valor) {
+    if (!req.body.pedidos_idpedidos) {
         res.status(400).send({
             message: "Conteúdo do corpo da requisição está vazio."
         });
     }
     else {
         const pedido = new PedidoModel({
-            nome: req.body.nome,
-            valor: req.body.valor
+            pedidos_idpedidos: req.body.pedidos_idpedidos
         });
 
         PedidoModel.create(pedido, (err, data) => {
