@@ -17,16 +17,16 @@ module.exports = app => {
     // Localhost:3000/produtos/pedido/10 = seleciona o produtos_pedidos do produto com ID=10
     app.get("/produtos_pedidos/pedido/:pedidoId", produto_pedidoController.findByPedido);
     // Localhost:3000/produtos/pedido/2 = seleciona o produtos_pedidos do produto com ID=2
-    app.get("/produtos_pedidos/pedido/:produtoseleciona o produtos_pedidos do produto com ID=10Id", produto_pedidoController.findByProduto);
+    app.get("/produtos_pedidos/pedido/:produtoId", produto_pedidoController.findByProduto);
 
-    // app.put("/produtos_pedidos/:produtoPedidoId", produto_pedidoController.update);
+    app.put("/produtos_pedidos/:produtoPedidoId", produto_pedidoController.update);
 
-    // // Localhost:3000/produtos/pedido/4 = deleta todos os produtos ID=4 dentro dos pedidos 
-    // app.delete("/produtos_pedidos/:produtoPedidoId", produto_pedidoController.delete);
-    // // Localhost:3000/produtos/pedido/10 = deleta o produtos_pedidos do produto com ID=10
-    // app.delete("/produtos_pedidos/pedido/:pedidoId", produto_pedidoController.deleteByPedido);
-    // // Localhost:3000/produtos/pedido/2 = deleta o produtos_pedidos do produto com ID=2
-    // app.delete("/produtos_pedidos/pedido/:produtoId", produto_pedidoController.deleteByProduto);
+    // Localhost:3000/produtos/pedido/4 = deleta todos os produtos ID=4 dentro dos pedidos 
+    app.delete("/produtos_pedidos/:produtoPedidoId", produto_pedidoController.delete);
+    // Localhost:3000/produtos/pedido/10 = deleta o produtos_pedidos do produto com ID=10
+    app.delete("/produtos_pedidos/pedido/:pedidoId", produto_pedidoController.deleteByPedido);
+    // Localhost:3000/produtos/pedido/2 = deleta o produtos_pedidos do produto com ID=2
+    app.delete("/produtos_pedidos/pedido/:produtoId", produto_pedidoController.deleteByProduto);
 
-    // app.delete("/produtos_pedidos", produto_pedidoController.deleteAll);
+    app.delete("/produtos_pedidos", produto_pedidoController.deleteAll);
 }

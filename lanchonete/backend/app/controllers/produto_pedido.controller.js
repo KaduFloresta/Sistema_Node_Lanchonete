@@ -149,6 +149,40 @@ exports.delete = (req, res) => {
     });
 };
 
+// Deleta um pedido
+exports.deleteByPedido = (req, res) => {
+produto_pedidoModel.remove.apply(req.params.pedidoId, (res, data) => {
+        if (err) {
+            if (err.kind == "not_found") {
+                res.status(404).send({ message: "Pedido não encontrado!" });
+            }
+            else {
+                res.status(500).send({ message: "Erro ao deletar o pedido" });
+            }
+        }
+        else {
+            res.send({ message: "Pedido deletado com sucesso!" });
+        }
+    });
+};
+
+// Deleta um produto
+exports.deleteByProduto = (req, res) => {
+    produto_pedidoModel.remove.apply(req.params.produtoId, (res, data) => {
+            if (err) {
+                if (err.kind == "not_found") {
+                    res.status(404).send({ message: "Pedido não encontrado!" });
+                }
+                else {
+                    res.status(500).send({ message: "Erro ao deletar o pedido" });
+                }
+            }
+            else {
+                res.send({ message: "Pedido deletado com sucesso!" });
+            }
+        });
+    };
+
 // Deleta todos os pedidos
 exports.deleteAll = (req, res) => {
     produto_pedidoModel.remove((err) => {

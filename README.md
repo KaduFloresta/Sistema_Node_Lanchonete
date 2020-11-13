@@ -22,11 +22,20 @@
 <hr>
 
 ## NodeJS - Sistema Conectado com o BD (SenacFlix)
-- HTML. (em desenvolvimento)
-- CSS. (em desenvolvimento)
-- Javascript.
-- Node.
-- MVC.
-- API.
-- Uso do Postman
+
+**FrontEnd**
+- [ ] Vuetify.
+
+**BacktEnd**
+- [X] Javascript.
+- [X] Node.
+- [X] MVC.
+- [X] API.
+- [X] Autenticação/Login.
+
+**Banco de Dados**
+- [X] Configuração/Conexão.
+- [X] Rotas.
+- [X] SQL.
+- [X] Teste - Postman.
 ---
