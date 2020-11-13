@@ -2,7 +2,7 @@
 <img align="right" alt="GIF" src="https://github.com/KaduFloresta/KaduFloresta/blob/main/img/1.gif" width="500";/>
 
 <a href="https://www.linkedin.com/in/kadufloresta/">
- <img src="https://media-exp1.licdn.com/dms/image/C4D03AQFfIeRf3UDQ9Q/profile-displayphoto-shrink_400_400/0?e=1605139200&v=beta&t=vWVjctWELGPrf-DrfqlwmBWjl88lk6ZwKTUJoCIkI_I" width="150px; alt=""/></b></a>  
+ <img src="https://media-exp1.licdn.com/dms/image/C4D03AQFfIeRf3UDQ9Q/profile-displayphoto-shrink_400_400/0?e=1610582400&v=beta&t=ZZukk_ay948xGGibisM8_MrtAkXpZ483elV_02VTcKQ" width="150px; alt=""/></b></a>  
  <br>
  
  <h3>:octocat: GitHub!</h3>
