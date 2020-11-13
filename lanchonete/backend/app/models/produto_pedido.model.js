@@ -143,9 +143,43 @@ ProdutoPedido.remove = (produtoPedidoId, result) => {
     });
 };
 
+// Remover o pedido através do ID
+ProdutoPedido.removeByPedido = (pedidoId, result) => {
+    sql.query(`DELETE FROM produtos_pedidos WHERE pedidos_idpedidos = ? `
+        + pedidoId, (err, res) => {
+            if (err) {
+                console.log("Erro", err);
+                result(null, err);
+            }
+            else if (res.affectedRows == 0) {
+                result({ kind: "not_found" }, null);
+            }
+            else {
+                result(null, res);
+            }
+        });
+};
+
+// Remover o produto através do ID
+ProdutoPedido.removeByProduto = (produtoId, result) => {
+    sql.query(`DELETE FROM produtos_pedidos WHERE produtos_idprodutos = ? `
+        + produtoId, (err, res) => {
+            if (err) {
+                console.log("Erro", err);
+                result(null, err);
+            }
+            else if (res.affectedRows == 0) {
+                result({ kind: "not_found" }, null);
+            }
+            else {
+                result(null, res);
+            }
+        });
+};
+
 // Remover todos os produtos de um pedido
 ProdutoPedido.removeAll = (result) => {
-    sql.query("DELETE FROM pedidos WHERE produtos", (err, re) => {
+    sql.query("DELETE FROM produtos_pedidos", (err, re) => {
         if (err) {
             console.log("Erro", err);
             result(err);

@@ -31,6 +31,7 @@
 - [X] Node.
 - [X] MVC.
 - [X] API.
+- [X] Autenticação/Login.
 
 **Banco de Dados**
 - [X] Configuração/Conexão.
