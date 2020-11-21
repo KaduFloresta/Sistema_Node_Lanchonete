@@ -27,7 +27,7 @@
 ## NodeJS - Sistema Conectado com o BD (SenacFlix)
 
 **FrontEnd**
-- [ ] Vuetify.
+- [X] Vuetify.
 
 **BacktEnd**
 - [X] Javascript.
@@ -41,4 +41,5 @@
 - [X] Rotas.
 - [X] SQL.
 - [X] Teste - Postman.
+
 ---
